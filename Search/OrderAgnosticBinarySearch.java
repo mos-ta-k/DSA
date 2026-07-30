@@ -1,7 +1,7 @@
 // if you don't know the given array is in ascending or descending order
 // then compare the first element and last element of the array
 
-public class OrderAgnostincBinarySearch {
+public class OrderAgnosticBinarySearch {
     public static void main(String[] args){
         int nums[] = {5,6,7,8,10,12};
         int target = 10;
