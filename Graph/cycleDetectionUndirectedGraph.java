@@ -1,8 +1,9 @@
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class AllPathFromSourceToTarget {
-
-    static class Edge {
+public class cycleDetectionUndirectedGraph {
+    public static class Edge {
         int src, dest;
 
         public Edge(int src, int dest) {
@@ -11,9 +12,9 @@ public class AllPathFromSourceToTarget {
         }
     }
 
-    public static void creategraph(ArrayList<Edge>[] graph) {
+    public static void createGraph(ArrayList<Edge>[] graph) {
         for (int i = 0; i < graph.length; i++) {
-            graph[i] = new ArrayList<Edge>();
+            graph[i] = new ArrayList<>();
         }
 
         graph[0].add(new Edge(0, 1)); 
@@ -39,29 +40,32 @@ public class AllPathFromSourceToTarget {
         graph[6].add(new Edge(6, 5));
     }
 
-    public static void printAllPath(ArrayList<Edge>[] graph, boolean[] visited, int current, String path, int target) {
-        if (current == target) {
-            System.out.println(path);
-            return;
-        }
-
+    public static boolean isCycle(ArrayList<Edge> graph[], boolean visited[], int current, int parent){
         visited[current] = true;
-        for (int i = 0; i < graph[current].size(); i++) {
+
+        // loop for all neighbours
+        for(int i = 0; i < graph[current].size(); i++){
             Edge e = graph[current].get(i);
-            if (!visited[e.dest]) {
-                printAllPath(graph, visited, e.dest, path + "->" + e.dest, target);
+
+            if(visited[e.dest] && e.dest != parent){
+                return true;
+            }else if(!visited[e.dest]){
+                // to visit invisited node
+                if(isCycle(graph, visited, e.dest, current)){
+                    return true;
+                }
             }
+
         }
-        visited[current] = false;
+        return false;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         int vertex = 7;
 
         ArrayList<Edge>[] graph = new ArrayList[vertex];
-        creategraph(graph);
+        createGraph(graph);
 
-        int src = 0, dest = 5;
-        printAllPath(graph, new boolean[vertex], src, "0", dest);
+        System.out.println(isCycle(graph, new boolean[vertex], 0, -1));
     }
 }
