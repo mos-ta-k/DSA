@@ -1,0 +1,66 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "cycleDetectionUndirectedGraph",
+      "request": "launch",
+      "mainClass": "cycleDetectionUndirectedGraph",
+      "projectName": "DSA_79061d18"
+    },
+    {
+      "type": "java",
+      "name": "CycleDetection",
+      "request": "launch",
+      "mainClass": "CycleDetection",
+      "projectName": "DSA_79061d18"
+    },
+    {
+      "type": "java",
+      "name": "AllPathFromSourceToTarget",
+      "request": "launch",
+      "mainClass": "AllPathFromSourceToTarget",
+      "projectName": "DSA_79061d18"
+    },
+    {
+      "type": "java",
+      "name": "DFS",
+      "request": "launch",
+      "mainClass": "DFS",
+      "projectName": "DSA_79061d18"
+    },
+    {
+      "type": "java",
+      "name": "WeightedGraph",
+      "request": "launch",
+      "mainClass": "WeightedGraph",
+      "projectName": "DSA_79061d18"
+    },
+    {
+      "type": "java",
+      "name": "CreateGraph",
+      "request": "launch",
+      "mainClass": "CreateGraph",
+      "projectName": "DSA_79061d18"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "e:/DSA/Graph",
+      "program": "e:/DSA/Graph/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
