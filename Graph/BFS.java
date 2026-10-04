@@ -42,8 +42,8 @@ public class BFS {
                 System.out.println(current + " ");
                 // 2. make visited current = true
                 visited[current] = true;
-                // 3. add current neighours into the queue
-
+                
+                // 3. add current neighbours into the queue
                 for(int i = 0; i < graph[current].size(); i++ ){
                     Edge e = graph[current].get(i);
                     queue.add(e.dest);
