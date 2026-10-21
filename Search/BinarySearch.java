@@ -2,7 +2,7 @@ public class BinarySearch {
     public static void main(String[] args){
 
         int nums[] = {5,6,7,8,10,12};
-        int target = 5;
+        int target = 7 ;
         int low = 0;
         int high = nums.length - 1;
 
@@ -20,7 +20,7 @@ public class BinarySearch {
         int high = nums.length - 1;
 
         while (low <= high) {
-            int mid = (low + high) / 2;
+            int mid = low + ((high - low )/2);
 
             if (nums[mid] == target) {
                 return mid;
